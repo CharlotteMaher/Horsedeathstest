@@ -18,7 +18,7 @@ def scrape_table(elephant):
             record['Horse'] = table_cells[0].text_content()
             #create variable table_cellsurls and put in it any links within the first table_cells item    
             table_cellsurls = table_cells[0].cssselect("a")
-            #grab the href=â€ attribute and put that in HorseURL
+            #grab the href attribute and put that in HorseURL
             record['HorseURL'] = table_cellsurls[0].attrib.get('href')
             testingreplace = 'http://www.horsedeathwatch.com/'+table_cellsurls[0].attrib.get('href')
             print testingreplace.replace(" ", "%20")
