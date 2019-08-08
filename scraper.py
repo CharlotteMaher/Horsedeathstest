@@ -2,9 +2,7 @@
 import scraperwiki
 import lxml.html
 import urllib
-#Use the urllib.urlopen function to open the URL 'properly' so it works
-horselinkurl = urllib.urlopen('http://www.horsedeathwatch.com/'+table_cellsurls[0].attrib.\
-get('href')).read()
+
 # scrape_table function: gets passed an individual page to scrape
 def scrape_table(elephant):
     rows = elephant.cssselect("tr")  # selects all <tr> blocks
@@ -51,3 +49,7 @@ def scrape_and_look_for_next_link(url):
 # START HERE: define your starting URL - then call a function to scrape it
 starting_url = 'http://www.horsedeathwatch.com/'
 scrape_and_look_for_next_link(starting_url)
+
+#Use the urllib.urlopen function to open the URL 'properly' so it works
+horselinkurl = urllib.urlopen('http://www.horsedeathwatch.com/'+table_cellsurls[0].attrib.\
+get('href')).read()
